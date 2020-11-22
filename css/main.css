@@ -276,7 +276,8 @@ ul li a:hover {
 }
 
 .img-portfolio-preview {
-  max-width: 100%;
+  height: 50%;
+  width: 75%;
   margin: 5vh 0vh;
 }
 
