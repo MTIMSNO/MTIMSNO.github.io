@@ -281,6 +281,14 @@ ul li a:hover {
   margin: 5vh 0vh;
 }
 
+.appstore_image {
+  margin: 3vh 0vh 0vh 0vh;
+}
+
+.googleplay_image {
+  margin: 1vh 0vh 0vh 0vh;
+}
+
 /*
  * FOOTER SCROLL.
  */
