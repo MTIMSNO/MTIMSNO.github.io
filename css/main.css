@@ -292,7 +292,7 @@ ul li a:hover {
 @media (max-width: 768px) {
   .appstore_image {
     margin: 3vh 0vh 0vh 0vh;
-    height: 75%;
+    height: 25%;
     width: 50%;
   }
   
