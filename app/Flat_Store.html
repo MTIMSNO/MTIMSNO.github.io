@@ -1,0 +1,23 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function ()
+	{
+		if((navigator.userAgent.toLowerCase().indexOf("iphone") > -1)
+			|| (navigator.userAgent.toLowerCase().indexOf("ipod") > -1)
+			|| (navigator.userAgent.toLowerCase().indexOf("ipad") > -1)
+			|| (navigator.userAgent.toLowerCase().indexOf("macintosh") > -1)
+		){
+			location.href = "https://apps.apple.com/jp/app/id1609852968";
+		}
+		else
+		{
+			location.href = "https://play.google.com/store/apps/details?id=com.myApp.flat";
+		}
+	});
+</script>
+</head>
+<body>
+</body>
+</html>
