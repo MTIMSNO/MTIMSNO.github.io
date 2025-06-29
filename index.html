@@ -4,171 +4,341 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>masanaomatsui.com</title>
-  <!-- 検索エンジンに対するインデックス設定 -->
-  <!-- noarchive : 内容が変化するためキャッシュを残させない -->
+  <title>Masanao Matsui - Portfolio</title>
+  <meta name="description" content="Masanao Matsui - Software Developer Portfolio">
   <meta name="robots" content="noarchive">
-  <!-- サイトのアイコン -->
   <link rel="shortcut icon" href="/img/favicon.ico">
-  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <!-- BootstrapのJS読み込み -->
-  <script src="js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 120px 0 80px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 300;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2.5rem;
+      color: #2c3e50;
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #667eea;
+    }
+
+    .about-text h3 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .skill-tag {
+      background: #667eea;
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      justify-content: center;
+    }
+
+    .social-links a {
+      color: #2c3e50;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #667eea;
+    }
+
+    .projects {
+      background: #f8f9fa;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      margin: 0 auto 1rem;
+      border: 2px solid #eee;
+    }
+
+    .project-card h3 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+
+    .download-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .download-links img {
+      height: 40px;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .about-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile-img {
+        width: 150px;
+        height: 150px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .download-links {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <nav>
-    <div class="toggle">
-      <div class="menu">
-        <i class="fa fa-bars"></i>
-      </div>
-    </div>
-    <ul>
-      <li><a href="#TOP">TOP</a></li>
-      <li><a href="#ABOUT">ABOUT</a></li>
-      <li><a href="#PORTFOLIO">PORTFOLIO</a></li>
-    </ul>
-  </nav>
+  <header>
+    <nav class="container">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="top" id="TOP">
-    <div class="jumbotron jumbotron-top">
-      <div class="container-fluid jumbotron-container">
-        <h1 class="text-center">HELLO.<br>I AM<br>MASANAO MATSUI.</h1>
-        <a href="#ABOUT"><span></span></a>
-      </div>
-    </div>
-  </div>
-
-  <div class="about" id="ABOUT">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-12 col-xs-12">
-          <h1 class="text-center">ABOUT</h1>
-        </div>
-        <div class="col-lg-12 col-xs-12 text-center">
-          <img src="./image/my.jpg" class="img-circle img-circle-about">
-        </div>
-        <div class="col-lg-12 col-xs-12">
-          <div class="profile">
-            <h4>- Profile -</h4>
-            <p>Matsui Masanao<br>Programmer</p>
-            <div class="sns">
-              <a href="https://twitter.com/iam_match4"><i class="fa fa-twitter twitter"></i></a>
-              <a href="https://github.com/MTIMSNO"><i class="fa fa-github github"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-12 col-xs-12">
-          <div class="skill">
-            <h4>- Skills -</h4>
-            <p>
-              Java8 / Swift / C# / C++ / C<br> JavaScript / HTML5 / CSS3 / Objective-C<br> PHP / JQuery / Node.js / VBA<br> MySQL / Realm Database<br> Unity / Cocos2d / AWS / GitHub
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="portfolio" id="PORTFOLIO">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-12 col-xs-12">
-          <h1 class="text-center">PORTFOLIO</h1>
-        </div>
-        <div class="col-lg-12 col-xs-12 text-center">
-          <h3>- 今日やるToDo -</h3>
-          <img src="./image/todaytodo/今日やるToDo.png" class="img-circle img-circle-portfolio">
-          </a>
-        </div>
-        <div class="col-lg-12 col-xs-12 text-center">
-          <a href="https://itunes.apple.com/us/app/今日やるToDo/id1566078133?l=ja&ls=1&mt=8">
-          <img src="./image/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" class="appstore_image">
-          </a>
-        </div>
-        <div class="col-lg-12 col-xs-12 text-center">
-          <a href='https://play.google.com/store/apps/details?id=com.myapp.TodayToDo&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
-            <img alt='Google Play で手に入れよう' src='https://play.google.com/intl/ja/badges/static/images/badges/ja_badge_web_generic.png' class="googleplay_image"/>
-          </a>
-        </div>
-        <div class="col-lg-12 col-xs-12">
-          <div class="row">
-            <div class="col-lg-6 col-xs-12 text-center">
-              <img src="./image/todaytodo/todaytodo_01.png" class="img-portfolio-preview">
-            </div>
-            <div class="col-lg-6 col-xs-12 text-center">
-              <img src="./image/todaytodo/todaytodo_02.png" class="img-portfolio-preview">
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-12 col-xs-12 text-center">
-          <h3>- Quadorato -</h3>
-          <img src="./image/quadorato/quadorato.png" class="img-circle img-circle-portfolio">
-        </div>
-        <div class="col-lg-12 col-xs-12 text-center">
-          <a href="https://itunes.apple.com/us/app/quadrato/id1437735596?l=ja&ls=1&mt=8">
-          <img src="./image/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" class="appstore_image">
-          </a>
-        </div>
-        <div class="col-lg-12 col-xs-12">
-          <div class="row">
-            <div class="col-lg-6 col-xs-12 text-center">
-              <img src="./image/quadorato/quadrato_01.png" class="img-portfolio-preview">
-            </div>
-            <div class="col-lg-6 col-xs-12 text-center">
-              <img src="./image/quadorato/quadrato_02.png" class="img-portfolio-preview">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <div class="footer-scroll">
+  <section class="hero" id="home">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-xs-12 text-center">
-          <a href="#TOP"><span></span></a>
-        </div>
-      </div>
+      <h1>Masanao Matsui</h1>
+      <p>Software Developer & Mobile App Creator</p>
     </div>
-  </div>
+  </section>
 
-  <div class="footer">
+  <section class="section" id="about">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-xs-12">
-          <div class="row">
-            <div class="col-lg-3 col-lg-offset-9 col-xs-8 col-xs-offset-4">
-              <p>&copy; 2018 Masanao Matsui</p>
-            </div>
+      <h2>About Me</h2>
+      <div class="about-content">
+        <img src="./image/my.jpg" alt="Masanao Matsui" class="profile-img">
+        <div class="about-text">
+          <h3>Masanao Matsui</h3>
+          <p>IT企業に所属する会社員。</p>
+          <p>普段はJavaを使用したシステム保守開発。個人でモバイルアプリ開発中。</p>
+          <div class="skills">
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">Swift</span>
+            <span class="skill-tag">Unity</span>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/MTIMSNO" target="_blank"><i class="fa fa-github"></i></a>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
+  <section class="section projects" id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-grid">
 
-  <script type="text/javascript">
-    $(function() {
-      $('a[href^=#]').click(function() {
-        var speed = 700; // ミリ秒
-        var href = $(this).attr("href");
-        var target = $(href == "#" || href == "" ? 'html' : href);
-        var position = target.offset().top;
-        $('body,html').animate({
-          scrollTop: position
-        }, speed, 'swing');
-        return false;
+        <div class="project-card">
+          <img src="./image/projects/quadorato.png" alt="QUADRATO：写真・動画正方形加工" class="project-icon">
+          <h3>QUADRATO：写真・動画正方形加工</h3>
+          <p>写真・動画を正方形に加工するアプリです。シンプルなデザインで直感的に操作できるのが特徴です。</p>
+          <div class="download-links">
+            <a href="https://itunes.apple.com/us/app/quadrato/id1437735596?l=ja&ls=1&mt=8" target="_blank">
+              <img src="./image/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="Download on App Store">
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="./image/projects/todaytodo.png" alt="今日やるToDo" class="project-icon">
+          <h3>今日やるToDo</h3>
+          <p>シンプルなタスク管理アプリ。"今日"のやることを整理し、生産性を向上させるためのツールです。</p>
+          <div class="download-links">
+            <a href="https://itunes.apple.com/us/app/今日やるToDo/id1566078133?l=ja&ls=1&mt=8" target="_blank">
+              <img src="./image/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="Download on App Store">
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="./image/projects/flat.png" alt="Flat" class="project-icon">
+          <h3>Flat-立体パズル</h3>
+          <p>ギミックを駆使しながら盤面を平らにする立体パズルゲーム。全てのキューブを穴に入れ平らにしよう！</p>
+          <div class="download-links">
+            <a href="https://itunes.apple.com/us/app/flat-立体パズル/id1609852968?l=ja&ls=1&mt=8" target="_blank">
+              <img src="./image/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="Download on App Store">
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <img src="./image/projects/bingomachine.jpeg" alt="BingoMachine" class="project-icon">
+          <h3>ビンゴマシーン</h3>
+          <p>シンプルで使いやすいビンゴゲーム用の数字抽選アプリ。パーティーやイベントで活躍する便利なツールです。</p>
+          <div class="download-links">
+            <a href="https://itunes.apple.com/us/app/ビンゴマシーン-シンプルなデザイン/id6740737527?l=ja&ls=1&mt=8" target="_blank">
+              <img src="./image/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg" alt="Download on App Store">
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Masanao Matsui. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
       });
-    });
-
-    $(document).ready(function() {
-      $('.menu').click(function() {
-        $('ul').toggleClass('active');
-      })
     });
   </script>
 </body>
