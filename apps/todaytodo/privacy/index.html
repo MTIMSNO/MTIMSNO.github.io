@@ -12,6 +12,44 @@
         rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/main.css">
+    <style>
+        .language-switcher {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .language-switcher button {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--color-primary);
+            background: transparent;
+            color: var(--color-primary);
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .language-switcher button.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .language-switcher button:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .language-content {
+            display: none;
+        }
+
+        .language-content.active {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -26,13 +64,18 @@
     <section class="hero">
         <div class="container">
             <h1>今日やるToDo</h1>
-            <p>プライバシーポリシー</p>
+            <p id="hero-subtitle">プライバシーポリシー</p>
         </div>
     </section>
 
     <section class="section">
         <div class="container">
-            <div class="content">
+            <div class="language-switcher">
+                <button onclick="switchLanguage('ja')" class="active" id="btn-ja">日本語</button>
+                <button onclick="switchLanguage('en')" id="btn-en">English</button>
+            </div>
+
+            <div class="content language-content active" id="content-ja">
                 <h1>プライバシーポリシー</h1>
 
                 <div class="privacy-intro">
@@ -109,6 +152,96 @@
                     </div>
                 </div>
             </div>
+
+            <div class="content language-content" id="content-en">
+                <h1>Privacy Policy</h1>
+
+                <div class="privacy-intro">
+                    Masanao Matsui (hereinafter referred to as "Operator") is committed to appropriately protecting the
+                    personal information of all customers (hereinafter referred to as "Users") who use TodayTodo
+                    (hereinafter referred to as "App"). This Privacy Policy outlines our approach to handling personal
+                    information. The App complies with the Act on the Protection of Personal Information, guidelines on
+                    personal information protection, and other related laws and regulations.
+                </div>
+
+                <h2><i class="fa fa-info-circle" style="margin-right: 0.5rem; color: var(--color-primary);"></i>1.
+                    Collection of Personal Information</h2>
+                <div class="info-box">
+                    <p>The App collects the following information:</p>
+                    <ol>
+                        <li>Usage data that cannot identify individuals (number of active devices, crash reports, etc.)
+                        </li>
+                        <li>The above information is aggregated and analyzed anonymously to improve the quality and
+                            convenience of the App</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-shield" style="margin-right: 0.5rem; color: var(--color-primary);"></i>2. Purpose of
+                    Use</h2>
+                <div class="info-box">
+                    <p>The collected information is used for the following purposes:</p>
+                    <ol>
+                        <li>Providing App features and improving services</li>
+                        <li>Fixing bugs and improving quality</li>
+                        <li>Analyzing App usage</li>
+                        <li>Responding to inquiries</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-lock" style="margin-right: 0.5rem; color: var(--color-primary);"></i>3. Management
+                    of Personal Information</h2>
+                <div class="info-box">
+                    <ol>
+                        <li>The Operator implements appropriate security measures to prevent leakage, tampering, loss,
+                            and unauthorized use of personal information</li>
+                        <li>The App does not collect any personally identifiable information (name, address, phone
+                            number, email address, etc.)</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-exchange" style="margin-right: 0.5rem; color: var(--color-primary);"></i>4.
+                    Third-Party Disclosure</h2>
+                <div class="info-box">
+                    <p>The Operator will not provide personal information to third parties without user consent, except
+                        in the following cases:</p>
+                    <ol>
+                        <li>When required by law</li>
+                        <li>When necessary to protect life, body, or property and obtaining user consent is difficult
+                        </li>
+                        <li>When cooperation is required with national or local government agencies in performing
+                            legally mandated duties</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-envelope" style="margin-right: 0.5rem; color: var(--color-primary);"></i>5. Contact
+                </h2>
+                <p>For inquiries regarding this Privacy Policy, please contact us at:</p>
+                <div class="contact-card">
+                    <i class="fa fa-envelope-o" style="margin-right: 0.5rem; color: var(--color-primary);"></i>
+                    <a href="mailto:macchaccha0331@gmail.com"
+                        style="font-weight: 500; color: var(--color-primary);">macchaccha0331@gmail.com</a>
+                </div>
+
+                <h2><i class="fa fa-calendar" style="margin-right: 0.5rem; color: var(--color-primary);"></i>6. Changes
+                    to Privacy Policy</h2>
+                <div class="info-box">
+                    <p>The Operator may change this Privacy Policy as necessary. The revised Privacy Policy will become
+                        effective upon posting on this page.</p>
+                </div>
+
+                <h2 style="margin-top: 3rem;"><i class="fa fa-clock-o"
+                        style="margin-right: 0.5rem; color: var(--color-primary);"></i>Effective Date</h2>
+                <div class="date-grid">
+                    <div class="date-card">
+                        <div class="date-label">Established</div>
+                        <div class="date-value">May 8, 2021</div>
+                    </div>
+                    <div class="date-card">
+                        <div class="date-label">Last Revised</div>
+                        <div class="date-value">February 23, 2022</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -120,6 +253,29 @@
         </div>
     </footer>
 
+    <script>
+        function switchLanguage(lang) {
+            const jaContent = document.getElementById('content-ja');
+            const enContent = document.getElementById('content-en');
+            const jaBtn = document.getElementById('btn-ja');
+            const enBtn = document.getElementById('btn-en');
+            const heroSubtitle = document.getElementById('hero-subtitle');
+
+            if (lang === 'ja') {
+                jaContent.classList.add('active');
+                enContent.classList.remove('active');
+                jaBtn.classList.add('active');
+                enBtn.classList.remove('active');
+                heroSubtitle.textContent = 'プライバシーポリシー';
+            } else {
+                enContent.classList.add('active');
+                jaContent.classList.remove('active');
+                enBtn.classList.add('active');
+                jaBtn.classList.remove('active');
+                heroSubtitle.textContent = 'Privacy Policy';
+            }
+        }
+    </script>
     <script src="/assets/js/main.js"></script>
 </body>
 

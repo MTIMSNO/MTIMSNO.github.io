@@ -22,6 +22,43 @@
             margin-bottom: 0.5rem;
             line-height: 1.8;
         }
+
+        .language-switcher {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .language-switcher button {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--color-primary);
+            background: transparent;
+            color: var(--color-primary);
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .language-switcher button.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .language-switcher button:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .language-content {
+            display: none;
+        }
+
+        .language-content.active {
+            display: block;
+        }
     </style>
 </head>
 
@@ -37,13 +74,18 @@
     <section class="hero">
         <div class="container">
             <h1>ビンゴマシーン</h1>
-            <p>利用規約</p>
+            <p id="hero-subtitle">利用規約</p>
         </div>
     </section>
 
     <section class="section">
         <div class="container">
-            <div class="content">
+            <div class="language-switcher">
+                <button onclick="switchLanguage('ja')" class="active" id="btn-ja">日本語</button>
+                <button onclick="switchLanguage('en')" id="btn-en">English</button>
+            </div>
+
+            <div class="content language-content active" id="content-ja">
                 <h1>利用規約</h1>
 
                 <div class="privacy-intro">
@@ -115,6 +157,95 @@
                     </div>
                 </div>
             </div>
+
+            <div class="content language-content" id="content-en">
+                <h1>Terms of Service</h1>
+
+                <div class="privacy-intro">
+                    These Terms of Service (hereinafter referred to as "Terms") set forth the terms and conditions for
+                    the use of "Tips (Support for Developer)" provided in the Bingo app "Bingo Machine: Simple Design"
+                    (hereinafter referred to as "App") by Masanao Matsui (hereinafter referred to as "Developer").
+                    Please be sure to read these Terms before making a purchase.
+                </div>
+
+                <h2><i class="fa fa-info-circle" style="margin-right: 0.5rem; color: var(--color-primary);"></i>1.
+                    Introduction
+                </h2>
+                <div class="info-box">
+                    <p>These Terms set forth the terms and conditions for the use of "Tips (Support for Developer)"
+                        provided in the App. Please be sure to read these Terms before making a purchase.</p>
+                </div>
+
+                <h2><i class="fa fa-gift" style="margin-right: 0.5rem; color: var(--color-primary);"></i>2. Nature of
+                    Tips</h2>
+                <div class="info-box">
+                    <ol>
+                        <li>Tips are intended for "donations and support" to support the development and operation of
+                            the App</li>
+                        <li>Purchasing Tips does not provide any direct rewards, such as unlocking specific features in
+                            the App or removing advertisements</li>
+                        <li>The App is provided as-is, and sending Tips does not guarantee perpetual updates or support
+                            in the future</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-credit-card" style="margin-right: 0.5rem; color: var(--color-primary);"></i>3.
+                    Purchase and Refund
+                </h2>
+                <div class="info-box">
+                    <ol>
+                        <li>Tips are processed through the payment system provided by Apple Inc.</li>
+                        <li>Due to the nature of digital content, we cannot accommodate cancellations or refunds for
+                            customer convenience after purchase is completed</li>
+                        <li>In the event of payment issues, please contact Apple's support</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-copyright" style="margin-right: 0.5rem; color: var(--color-primary);"></i>4.
+                    Ownership of Rights
+                </h2>
+                <div class="info-box">
+                    <p>All intellectual property rights related to the App belong to the Developer. Sending Tips does
+                        not transfer intellectual property rights or operational authority to users.</p>
+                </div>
+
+                <h2><i class="fa fa-shield" style="margin-right: 0.5rem; color: var(--color-primary);"></i>5. Disclaimer
+                </h2>
+                <div class="info-box">
+                    <p>The Developer shall not be liable for any damages incurred by users through the use of the App
+                        (including the purchase of Tips), except in cases of willful misconduct or gross negligence by
+                        the Developer.</p>
+                </div>
+
+                <h2><i class="fa fa-refresh" style="margin-right: 0.5rem; color: var(--color-primary);"></i>6. Changes
+                    to Terms
+                </h2>
+                <div class="info-box">
+                    <p>The Developer may change these Terms at any time without notice to users if deemed necessary.</p>
+                </div>
+
+                <h2><i class="fa fa-envelope" style="margin-right: 0.5rem; color: var(--color-primary);"></i>Contact
+                </h2>
+                <p>For inquiries regarding the App, please contact us at the following email address.</p>
+                <div class="contact-card">
+                    <i class="fa fa-envelope-o" style="margin-right: 0.5rem; color: var(--color-primary);"></i>
+                    <a href="mailto:macchaccha0331@gmail.com"
+                        style="font-weight: 500; color: var(--color-primary);">macchaccha0331@gmail.com</a>
+                </div>
+
+                <h2 style="margin-top: 3rem;"><i class="fa fa-clock-o"
+                        style="margin-right: 0.5rem; color: var(--color-primary);"></i>Effective Date</h2>
+                <div class="date-grid">
+                    <div class="date-card">
+                        <div class="date-label">Established</div>
+                        <div class="date-value">December 21, 2025</div>
+                    </div>
+                    <div class="date-card">
+                        <div class="date-label">Last Revised</div>
+                        <div class="date-value">December 21, 2025</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -126,6 +257,29 @@
         </div>
     </footer>
 
+    <script>
+        function switchLanguage(lang) {
+            const jaContent = document.getElementById('content-ja');
+            const enContent = document.getElementById('content-en');
+            const jaBtn = document.getElementById('btn-ja');
+            const enBtn = document.getElementById('btn-en');
+            const heroSubtitle = document.getElementById('hero-subtitle');
+
+            if (lang === 'ja') {
+                jaContent.classList.add('active');
+                enContent.classList.remove('active');
+                jaBtn.classList.add('active');
+                enBtn.classList.remove('active');
+                heroSubtitle.textContent = '利用規約';
+            } else {
+                enContent.classList.add('active');
+                jaContent.classList.remove('active');
+                enBtn.classList.add('active');
+                jaBtn.classList.remove('active');
+                heroSubtitle.textContent = 'Terms of Service';
+            }
+        }
+    </script>
     <script src="/assets/js/main.js"></script>
 </body>
 

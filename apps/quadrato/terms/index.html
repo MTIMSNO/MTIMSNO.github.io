@@ -22,6 +22,43 @@
             margin-bottom: 0.5rem;
             line-height: 1.8;
         }
+
+        .language-switcher {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .language-switcher button {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--color-primary);
+            background: transparent;
+            color: var(--color-primary);
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .language-switcher button.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .language-switcher button:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .language-content {
+            display: none;
+        }
+
+        .language-content.active {
+            display: block;
+        }
     </style>
 </head>
 
@@ -37,13 +74,18 @@
     <section class="hero">
         <div class="container">
             <h1>QUADRATO</h1>
-            <p>利用規約</p>
+            <p id="hero-subtitle">利用規約</p>
         </div>
     </section>
 
     <section class="section">
         <div class="container">
-            <div class="content">
+            <div class="language-switcher">
+                <button onclick="switchLanguage('ja')" class="active" id="btn-ja">日本語</button>
+                <button onclick="switchLanguage('en')" id="btn-en">English</button>
+            </div>
+
+            <div class="content language-content active" id="content-ja">
                 <h1>利用規約</h1>
 
                 <div class="privacy-intro">
@@ -143,6 +185,122 @@
                     </div>
                 </div>
             </div>
+
+            <div class="content language-content" id="content-en">
+                <h1>Terms of Use</h1>
+
+                <div class="privacy-intro">
+                    These Terms of Use (hereinafter referred to as "Terms") set forth the conditions for using the photo
+                    and video editing app "QUADRATO" (hereinafter referred to as "App") provided by Masanao Matsui
+                    (hereinafter referred to as "Operator"). By using the App, users are deemed to have agreed to these
+                    Terms.
+                </div>
+
+                <h2><i class="fa fa-file-text-o" style="margin-right: 0.5rem; color: var(--color-primary);"></i>1. Scope
+                    of Application</h2>
+                <div class="info-box">
+                    <ol>
+                        <li>These Terms apply to all relationships between users and the Operator regarding the use of
+                            the App</li>
+                        <li>The Operator may establish rules and guidelines for use of the App in addition to these
+                            Terms. These shall constitute part of these Terms</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-user-o" style="margin-right: 0.5rem; color: var(--color-primary);"></i>2. User
+                    Registration</h2>
+                <div class="info-box">
+                    <p>The App does not require user ID or password registration and is available to anyone.</p>
+                </div>
+
+                <h2><i class="fa fa-credit-card" style="margin-right: 0.5rem; color: var(--color-primary);"></i>3. Usage
+                    Fees</h2>
+                <div class="info-box">
+                    <ol>
+                        <li>The App is available for free with basic features</li>
+                        <li>Some features are available through paid subscriptions. Subscription fees and content shall
+                            be as displayed in the App</li>
+                        <li>Users shall purchase paid services according to the payment methods established by Apple
+                            Inc.</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-bullhorn" style="margin-right: 0.5rem; color: var(--color-primary);"></i>4.
+                    Advertising</h2>
+                <div class="info-box">
+                    <p>The Operator may display advertisements within the App.</p>
+                </div>
+
+                <h2><i class="fa fa-ban" style="margin-right: 0.5rem; color: var(--color-primary);"></i>5. Prohibited
+                    Activities</h2>
+                <div class="info-box">
+                    <p>Users shall not engage in the following activities:</p>
+                    <ol>
+                        <li>Unauthorized access or attempts thereof</li>
+                        <li>Reverse engineering, decompilation, disassembly, or other analysis activities</li>
+                        <li>Activities that interfere with the operation of the App</li>
+                        <li>Activities that violate laws, regulations, or public order and morals</li>
+                        <li>Other activities deemed inappropriate by the Operator</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-shield" style="margin-right: 0.5rem; color: var(--color-primary);"></i>6. Disclaimer
+                </h2>
+                <div class="info-box">
+                    <ol>
+                        <li>The Operator shall not be liable for any damages incurred by users in connection with the
+                            App</li>
+                        <li>The Operator shall have no obligation to fix or improve any defects in the App</li>
+                        <li>The Operator shall not be liable for disputes between users or with third parties</li>
+                        <li>The Operator shall not be liable if provision of the App becomes difficult due to natural
+                            disasters, communication failures, or other force majeure events</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-pause-circle-o" style="margin-right: 0.5rem; color: var(--color-primary);"></i>7.
+                    Suspension of Use</h2>
+                <div class="info-box">
+                    <p>The Operator may suspend a user's use of the App without prior notice if the user violates these
+                        Terms or is likely to do so.</p>
+                </div>
+
+                <h2><i class="fa fa-refresh" style="margin-right: 0.5rem; color: var(--color-primary);"></i>8. Changes
+                    to Terms</h2>
+                <div class="info-box">
+                    <p>The Operator may change these Terms without notifying users if deemed necessary. The revised
+                        Terms will become effective upon posting on this page.</p>
+                </div>
+
+                <h2><i class="fa fa-gavel" style="margin-right: 0.5rem; color: var(--color-primary);"></i>9. Governing
+                    Law and Jurisdiction</h2>
+                <div class="info-box">
+                    <p>These Terms shall be governed by and construed in accordance with the laws of Japan. In the event
+                        of a dispute regarding the App, the court having jurisdiction over the Operator's location shall
+                        have exclusive jurisdiction.</p>
+                </div>
+
+                <h2><i class="fa fa-envelope" style="margin-right: 0.5rem; color: var(--color-primary);"></i>10. Contact
+                </h2>
+                <p>For inquiries regarding the App, please contact:</p>
+                <div class="contact-card">
+                    <i class="fa fa-envelope-o" style="margin-right: 0.5rem; color: var(--color-primary);"></i>
+                    <a href="mailto:mtimsno1330@gmail.com"
+                        style="font-weight: 500; color: var(--color-primary);">mtimsno1330@gmail.com</a>
+                </div>
+
+                <h2 style="margin-top: 3rem;"><i class="fa fa-clock-o"
+                        style="margin-right: 0.5rem; color: var(--color-primary);"></i>Effective Date</h2>
+                <div class="date-grid">
+                    <div class="date-card">
+                        <div class="date-label">Established</div>
+                        <div class="date-value">July 21, 2025</div>
+                    </div>
+                    <div class="date-card">
+                        <div class="date-label">Last Revised</div>
+                        <div class="date-value">July 21, 2025</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -154,6 +312,29 @@
         </div>
     </footer>
 
+    <script>
+        function switchLanguage(lang) {
+            const jaContent = document.getElementById('content-ja');
+            const enContent = document.getElementById('content-en');
+            const jaBtn = document.getElementById('btn-ja');
+            const enBtn = document.getElementById('btn-en');
+            const heroSubtitle = document.getElementById('hero-subtitle');
+
+            if (lang === 'ja') {
+                jaContent.classList.add('active');
+                enContent.classList.remove('active');
+                jaBtn.classList.add('active');
+                enBtn.classList.remove('active');
+                heroSubtitle.textContent = '利用規約';
+            } else {
+                enContent.classList.add('active');
+                jaContent.classList.remove('active');
+                enBtn.classList.add('active');
+                jaBtn.classList.remove('active');
+                heroSubtitle.textContent = 'Terms of Use';
+            }
+        }
+    </script>
     <script src="/assets/js/main.js"></script>
 </body>
 
