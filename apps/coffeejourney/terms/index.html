@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>利用規約 - CoffeeJourney</title>
+    <meta name="description" content="CoffeeJourney - 利用規約">
+    <meta name="robots" content="noarchive">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <style>
+        .content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+
+        .language-switcher {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .language-switcher button {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--color-primary);
+            background: transparent;
+            color: var(--color-primary);
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .language-switcher button.active {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .language-switcher button:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        .language-content {
+            display: none;
+        }
+
+        .language-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/"
+                style="font-size: 1.25rem; font-weight: 700; color: var(--color-text); text-decoration: none;">Masanao
+                Matsui</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>CoffeeJourney</h1>
+            <p id="hero-subtitle">利用規約</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="language-switcher">
+                <button onclick="switchLanguage('ja')" class="active" id="btn-ja">日本語</button>
+                <button onclick="switchLanguage('en')" id="btn-en">English</button>
+            </div>
+
+            <div class="content language-content active" id="content-ja">
+                <h1>利用規約</h1>
+
+                <div class="privacy-intro">
+                    本利用規約（以下「本規約」）は、松井
+                    諒直（以下「運営者」といいます）が提供するコーヒー記録アプリ「CoffeeJourney」（以下「本アプリ」といいます）の利用条件を定めるものです。本アプリをご利用いただくことにより、ユーザーの皆様は本規約に同意したものとみなします。
+                </div>
+
+                <h2><i class="fa fa-file-text-o" style="margin-right: 0.5rem; color: var(--color-primary);"></i>一. 適用範囲
+                </h2>
+                <div class="info-box">
+                    <ol>
+                        <li>本規約は、利用者と運営者との間の本アプリの利用に関わる一切の関係に適用されます</li>
+                        <li>運営者は、本アプリに関し、本規約のほか、利用に関するルール等を定めることがあります。これらは本規約の一部を構成します</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-user-o" style="margin-right: 0.5rem; color: var(--color-primary);"></i>二. 利用登録</h2>
+                <div class="info-box">
+                    <p>本アプリは、ユーザーIDやパスワードの登録を必要とせず、どなたでもご利用いただけます。</p>
+                </div>
+
+                <h2><i class="fa fa-credit-card" style="margin-right: 0.5rem; color: var(--color-primary);"></i>三. 利用料金
+                </h2>
+                <div class="info-box">
+                    <ol>
+                        <li>本アプリは基本無料でご利用いただけます</li>
+                        <li>一部の機能については有料サブスクリプションが提供されます。サブスクリプションの料金・内容については、アプリ内の表示に従うものとします</li>
+                        <li>利用者は、Apple社が定める決済方法に従って有料サービスを購入するものとします</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-bullhorn" style="margin-right: 0.5rem; color: var(--color-primary);"></i>四. 広告表示
+                </h2>
+                <div class="info-box">
+                    <p>運営者は、本アプリ内において広告を表示することができます。</p>
+                </div>
+
+                <h2><i class="fa fa-ban" style="margin-right: 0.5rem; color: var(--color-primary);"></i>五. 禁止事項</h2>
+                <div class="info-box">
+                    <p>利用者は、以下の行為を行ってはなりません。</p>
+                    <ol>
+                        <li>不正アクセスまたはその試行行為</li>
+                        <li>リバースエンジニアリング、逆コンパイル、逆アセンブル等の解析行為</li>
+                        <li>本アプリの運営を妨害する行為</li>
+                        <li>法令または公序良俗に違反する行為</li>
+                        <li>その他、運営者が不適切と判断する行為</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-shield" style="margin-right: 0.5rem; color: var(--color-primary);"></i>六. 免責事項</h2>
+                <div class="info-box">
+                    <ol>
+                        <li>運営者は、本アプリに関して利用者に発生した損害について、一切の責任を負いません</li>
+                        <li>本アプリに不具合があっても、運営者はその修正や改善の義務を負わないものとします</li>
+                        <li>利用者間または第三者とのトラブルについて、運営者は一切責任を負いません</li>
+                        <li>天災、通信障害、その他の不可抗力により本アプリの提供が困難になった場合、運営者は責任を負いません</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-pause-circle-o" style="margin-right: 0.5rem; color: var(--color-primary);"></i>七.
+                    利用停止</h2>
+                <div class="info-box">
+                    <p>運営者は、利用者が本規約に違反した場合、または違反するおそれがあると判断した場合、事前の通知なく当該利用者による本アプリの利用を停止することができるものとします。</p>
+                </div>
+
+                <h2><i class="fa fa-refresh" style="margin-right: 0.5rem; color: var(--color-primary);"></i>八. 規約の変更
+                </h2>
+                <div class="info-box">
+                    <p>運営者は、必要と判断した場合、利用者に通知することなく本規約を変更することができます。変更後の規約は、本ページに掲載された時点で効力を生じるものとします。</p>
+                </div>
+
+                <h2><i class="fa fa-gavel" style="margin-right: 0.5rem; color: var(--color-primary);"></i>九. 準拠法および管轄裁判所
+                </h2>
+                <div class="info-box">
+                    <p>本規約は日本法に準拠し、解釈されます。本アプリに関して紛争が生じた場合は、運営者の所在地を管轄する裁判所を専属的合意管轄とします。</p>
+                </div>
+
+                <h2><i class="fa fa-envelope" style="margin-right: 0.5rem; color: var(--color-primary);"></i>十. お問い合わせ窓口
+                </h2>
+                <p>本アプリに関するお問い合わせは、以下のメールアドレスまでお願いいたします。</p>
+                <div class="contact-card">
+                    <i class="fa fa-envelope-o" style="margin-right: 0.5rem; color: var(--color-primary);"></i>
+                    <a href="mailto:macchaccha0331@gmail.com"
+                        style="font-weight: 500; color: var(--color-primary);">macchaccha0331@gmail.com</a>
+                </div>
+
+                <h2 style="margin-top: 3rem;"><i class="fa fa-clock-o"
+                        style="margin-right: 0.5rem; color: var(--color-primary);"></i>制定日・改定日</h2>
+                <div class="date-grid">
+                    <div class="date-card">
+                        <div class="date-label">制定日</div>
+                        <div class="date-value">2026年02月02日</div>
+                    </div>
+                    <div class="date-card">
+                        <div class="date-label">最終改定日</div>
+                        <div class="date-value">2026年02月02日</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content language-content" id="content-en">
+                <h1>Terms of Use</h1>
+
+                <div class="privacy-intro">
+                    These Terms of Use (hereinafter referred to as "Terms") set forth the conditions for using the coffee
+                    tracking app "CoffeeJourney" (hereinafter referred to as "App") provided by Masanao Matsui
+                    (hereinafter referred to as "Operator"). By using the App, users are deemed to have agreed to these
+                    Terms.
+                </div>
+
+                <h2><i class="fa fa-file-text-o" style="margin-right: 0.5rem; color: var(--color-primary);"></i>1. Scope
+                    of Application</h2>
+                <div class="info-box">
+                    <ol>
+                        <li>These Terms apply to all relationships between users and the Operator regarding the use of
+                            the App</li>
+                        <li>The Operator may establish rules and guidelines for use of the App in addition to these
+                            Terms. These shall constitute part of these Terms</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-user-o" style="margin-right: 0.5rem; color: var(--color-primary);"></i>2. User
+                    Registration</h2>
+                <div class="info-box">
+                    <p>The App does not require user ID or password registration and is available to anyone.</p>
+                </div>
+
+                <h2><i class="fa fa-credit-card" style="margin-right: 0.5rem; color: var(--color-primary);"></i>3. Usage
+                    Fees</h2>
+                <div class="info-box">
+                    <ol>
+                        <li>The App is available for free with basic features</li>
+                        <li>Some features are available through paid subscriptions. Subscription fees and content shall
+                            be as displayed in the App</li>
+                        <li>Users shall purchase paid services according to the payment methods established by Apple
+                            Inc.</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-bullhorn" style="margin-right: 0.5rem; color: var(--color-primary);"></i>4.
+                    Advertising</h2>
+                <div class="info-box">
+                    <p>The Operator may display advertisements within the App.</p>
+                </div>
+
+                <h2><i class="fa fa-ban" style="margin-right: 0.5rem; color: var(--color-primary);"></i>5. Prohibited
+                    Activities</h2>
+                <div class="info-box">
+                    <p>Users shall not engage in the following activities:</p>
+                    <ol>
+                        <li>Unauthorized access or attempts thereof</li>
+                        <li>Reverse engineering, decompilation, disassembly, or other analysis activities</li>
+                        <li>Activities that interfere with the operation of the App</li>
+                        <li>Activities that violate laws, regulations, or public order and morals</li>
+                        <li>Other activities deemed inappropriate by the Operator</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-shield" style="margin-right: 0.5rem; color: var(--color-primary);"></i>6. Disclaimer
+                </h2>
+                <div class="info-box">
+                    <ol>
+                        <li>The Operator shall not be liable for any damages incurred by users in connection with the
+                            App</li>
+                        <li>The Operator shall have no obligation to fix or improve any defects in the App</li>
+                        <li>The Operator shall not be liable for disputes between users or with third parties</li>
+                        <li>The Operator shall not be liable if provision of the App becomes difficult due to natural
+                            disasters, communication failures, or other force majeure events</li>
+                    </ol>
+                </div>
+
+                <h2><i class="fa fa-pause-circle-o" style="margin-right: 0.5rem; color: var(--color-primary);"></i>7.
+                    Suspension of Use</h2>
+                <div class="info-box">
+                    <p>The Operator may suspend a user's use of the App without prior notice if the user violates these
+                        Terms or is likely to do so.</p>
+                </div>
+
+                <h2><i class="fa fa-refresh" style="margin-right: 0.5rem; color: var(--color-primary);"></i>8. Changes
+                    to Terms</h2>
+                <div class="info-box">
+                    <p>The Operator may change these Terms without notifying users if deemed necessary. The revised
+                        Terms will become effective upon posting on this page.</p>
+                </div>
+
+                <h2><i class="fa fa-gavel" style="margin-right: 0.5rem; color: var(--color-primary);"></i>9. Governing
+                    Law and Jurisdiction</h2>
+                <div class="info-box">
+                    <p>These Terms shall be governed by and construed in accordance with the laws of Japan. In the event
+                        of a dispute regarding the App, the court having jurisdiction over the Operator's location shall
+                        have exclusive jurisdiction.</p>
+                </div>
+
+                <h2><i class="fa fa-envelope" style="margin-right: 0.5rem; color: var(--color-primary);"></i>10. Contact
+                </h2>
+                <p>For inquiries regarding the App, please contact:</p>
+                <div class="contact-card">
+                    <i class="fa fa-envelope-o" style="margin-right: 0.5rem; color: var(--color-primary);"></i>
+                    <a href="mailto:macchaccha0331@gmail.com"
+                        style="font-weight: 500; color: var(--color-primary);">macchaccha0331@gmail.com</a>
+                </div>
+
+                <h2 style="margin-top: 3rem;"><i class="fa fa-clock-o"
+                        style="margin-right: 0.5rem; color: var(--color-primary);"></i>Effective Date</h2>
+                <div class="date-grid">
+                    <div class="date-card">
+                        <div class="date-label">Established</div>
+                        <div class="date-value">February 2, 2026</div>
+                    </div>
+                    <div class="date-card">
+                        <div class="date-label">Last Revised</div>
+                        <div class="date-value">February 2, 2026</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer
+        style="background: var(--color-bg-secondary); padding: 2rem 0; text-align: center; border-top: 1px solid var(--color-border); margin-top: 3rem;">
+        <div class="container">
+            <p style="color: var(--color-text-light); font-size: 0.9rem; margin: 0;">&copy; 2026 Masanao Matsui. All
+                rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchLanguage(lang) {
+            const jaContent = document.getElementById('content-ja');
+            const enContent = document.getElementById('content-en');
+            const jaBtn = document.getElementById('btn-ja');
+            const enBtn = document.getElementById('btn-en');
+            const heroSubtitle = document.getElementById('hero-subtitle');
+
+            if (lang === 'ja') {
+                jaContent.classList.add('active');
+                enContent.classList.remove('active');
+                jaBtn.classList.add('active');
+                enBtn.classList.remove('active');
+                heroSubtitle.textContent = '利用規約';
+            } else {
+                enContent.classList.add('active');
+                jaContent.classList.remove('active');
+                enBtn.classList.add('active');
+                jaBtn.classList.remove('active');
+                heroSubtitle.textContent = 'Terms of Use';
+            }
+        }
+    </script>
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
