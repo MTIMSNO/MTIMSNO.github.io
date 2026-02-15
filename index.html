@@ -10,6 +10,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0" />
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./assets/css/main.css">
   <style>
@@ -94,6 +96,7 @@
       border: 1px solid var(--color-border);
       text-align: left;
       transition: box-shadow 0.2s, transform 0.2s;
+      position: relative;
     }
 
     .project-card:hover {
@@ -107,6 +110,7 @@
       border-radius: 16px;
       margin-bottom: 1rem;
       border: 1px solid var(--color-border);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
     }
 
     .project-card h3 {
@@ -122,6 +126,7 @@
       font-size: 0.9rem;
       line-height: 1.6;
       margin-bottom: 1rem;
+      min-height: 5.8rem;
     }
 
     .project-tags {
@@ -139,17 +144,54 @@
       font-size: 0.75rem;
       font-weight: 500;
       border: 1px solid var(--color-border);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .project-tag .material-symbols-outlined {
+      font-size: 0.95rem;
     }
 
     .download-links {
       display: flex;
       justify-content: flex-start;
+      align-items: center;
       gap: 1rem;
       margin-top: 1rem;
     }
 
     .download-links img {
       height: 36px;
+    }
+
+    .izanami-logo {
+      height: 24px !important;
+    }
+
+    .availability-badge {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: var(--color-bg-secondary);
+      color: var(--color-text-light);
+      padding: 0.35rem 0.85rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border: 1px solid var(--color-border);
+      display: inline-block;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    }
+
+    .availability-badge.available {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .availability-badge.coming-soon {
+      background: #fff3cd;
+      color: #856404;
     }
 
     @media (max-width: 768px) {
@@ -223,14 +265,15 @@
       <div class="project-grid">
 
         <div class="project-card">
+          <span class="availability-badge coming-soon">Coming Soon</span>
           <img src="./assets/images/projects/coffeejourney.png" alt="CoffeeJourney - コーヒー記録アプリ" class="project-icon">
           <h3>CoffeeJourney - コーヒー記録アプリ</h3>
           <p>毎日のコーヒーを記録し、世界地図に可視化するアプリです。<br>
             豆・抽出方法・場所を簡単にログとして残し、あなたのコーヒー体験を積み重ねていきます。</p>
           <div class="project-tags">
-            <span class="project-tag">ツール</span>
-            <span class="project-tag">コーヒー</span>
-            <span class="project-tag">記録</span>
+            <span class="project-tag"><span class="material-symbols-outlined">build</span>ツール</span>
+            <span class="project-tag"><span class="material-symbols-outlined">coffee</span>コーヒー</span>
+            <span class="project-tag"><span class="material-symbols-outlined">history_edu</span>記録</span>
           </div>
           <div class="download-links">
             <a href="https://apps.apple.com/us/app/coffeejourney-%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%E8%A8%98%E9%8C%B2%E3%82%A2%E3%83%97%E3%83%AA/id6758566084"
@@ -242,14 +285,15 @@
         </div>
 
         <div class="project-card">
+          <span class="availability-badge available">Available Now</span>
           <img src="./assets/images/projects/burgerbuffet.png" alt="バーガービュッフェ - BurgerBuffet" class="project-icon">
           <h3>バーガービュッフェ - BurgerBuffet</h3>
           <p>行・列を操作する新感覚パズルゲームです。<br>
             1プレイ90秒なので空いた時間にサクッと遊べるゲームとなっています。</p>
           <div class="project-tags">
-            <span class="project-tag">ゲーム</span>
-            <span class="project-tag">パズル</span>
-            <span class="project-tag">カジュアル</span>
+            <span class="project-tag"><span class="material-symbols-outlined">videogame_asset</span>ゲーム</span>
+            <span class="project-tag"><span class="material-symbols-outlined">extension</span>パズル</span>
+            <span class="project-tag"><span class="material-symbols-outlined">style</span>カジュアル</span>
           </div>
           <div class="download-links">
             <a href="https://apps.apple.com/us/app/%E3%83%90%E3%83%BC%E3%82%AC%E3%83%BC%E3%83%93%E3%83%A5%E3%83%83%E3%83%95%E3%82%A7-burgerbuffet/id6751773322"
@@ -257,19 +301,23 @@
               <img src="./assets/images/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
                 alt="Download on App Store">
             </a>
+            <a href="https://izanami.dev/post/27d0f0c5-f0dc-4fa7-a964-20ec23c162ab" target="_blank">
+              <img src="./assets/images/izanami_logo.png" alt="izanami" class="izanami-logo">
+            </a>
           </div>
         </div>
 
         <div class="project-card">
+          <span class="availability-badge available">Available Now</span>
           <img src="./assets/images/projects/bingomachine.png" alt="BingoMachine" class="project-icon">
           <h3>ビンゴマシーン</h3>
-          <p>シンプルで使いやすいビンゴゲーム用の数字抽選アプリ。<br>
+          <p>シンプルで使いやすい数字抽選アプリです。<br>
             パーティーやイベントで活躍する便利なツールです。</p>
           <div class="project-tags">
-            <span class="project-tag">ゲーム</span>
-            <span class="project-tag">ツール</span>
-            <span class="project-tag">ビンゴ</span>
-            <span class="project-tag">パーティー</span>
+            <span class="project-tag"><span class="material-symbols-outlined">videogame_asset</span>ゲーム</span>
+            <span class="project-tag"><span class="material-symbols-outlined">build</span>ツール</span>
+            <span class="project-tag"><span class="material-symbols-outlined">grid_on</span>ビンゴ</span>
+            <span class="project-tag"><span class="material-symbols-outlined">celebration</span>パーティー</span>
           </div>
           <div class="download-links">
             <a href="https://itunes.apple.com/us/app/ビンゴマシーン-シンプルなデザイン/id6740737527?l=ja&ls=1&mt=8" target="_blank">
@@ -280,32 +328,37 @@
         </div>
 
         <div class="project-card">
+          <span class="availability-badge available">Available Now</span>
           <img src="./assets/images/projects/quadorato.png" alt="QUADRATO：写真・動画正方形加工" class="project-icon">
           <h3>QUADRATO：写真・動画正方形加工</h3>
           <p>写真・動画を正方形に加工するアプリです。<br>
             シンプルなデザインで直感的に操作できるのが特徴です。</p>
           <div class="project-tags">
-            <span class="project-tag">ツール</span>
-            <span class="project-tag">シンプル</span>
-            <span class="project-tag">写真・動画加工</span>
+            <span class="project-tag"><span class="material-symbols-outlined">build</span>ツール</span>
+            <span class="project-tag"><span class="material-symbols-outlined">check_circle</span>シンプル</span>
+            <span class="project-tag"><span class="material-symbols-outlined">crop_square</span>加工</span>
           </div>
           <div class="download-links">
             <a href="https://itunes.apple.com/us/app/quadrato/id1437735596?l=ja&ls=1&mt=8" target="_blank">
               <img src="./assets/images/Download_on_the_App_Store_Badge_JP_RGB_blk_100317.svg"
                 alt="Download on App Store">
             </a>
+            <a href="https://izanami.dev/post/6ed718c9-ed15-4d17-80ec-b4e25f1f3e40" target="_blank">
+              <img src="./assets/images/izanami_logo.png" alt="izanami" class="izanami-logo">
+            </a>
           </div>
         </div>
 
         <div class="project-card">
+          <span class="availability-badge available">Available Now</span>
           <img src="./assets/images/projects/flat.png" alt="Flat" class="project-icon">
           <h3>Flat-立体パズル</h3>
-          <p>ギミックを駆使しながら盤面を平らにする立体パズルゲーム。<br>
+          <p>ギミックを駆使しながら盤面を平らにする立体パズルゲームです。<br>
             全てのキューブを穴に入れ平らにしよう！</p>
           <div class="project-tags">
-            <span class="project-tag">ゲーム</span>
-            <span class="project-tag">パズル</span>
-            <span class="project-tag">3D</span>
+            <span class="project-tag"><span class="material-symbols-outlined">videogame_asset</span>ゲーム</span>
+            <span class="project-tag"><span class="material-symbols-outlined">extension</span>パズル</span>
+            <span class="project-tag"><span class="material-symbols-outlined">view_in_ar</span>3D</span>
           </div>
           <div class="download-links">
             <a href="https://itunes.apple.com/us/app/flat-立体パズル/id1609852968?l=ja&ls=1&mt=8" target="_blank">
@@ -316,14 +369,15 @@
         </div>
 
         <div class="project-card">
+          <span class="availability-badge available">Available Now</span>
           <img src="./assets/images/projects/todaytodo.png" alt="今日やるToDo" class="project-icon">
           <h3>今日やるToDo</h3>
-          <p>シンプルなタスク管理アプリ。<br>
+          <p>シンプルなタスク管理アプリです。<br>
             "今日"のやることを整理し、生産性を向上させるためのツールです。</p>
           <div class="project-tags">
-            <span class="project-tag">ツール</span>
-            <span class="project-tag">TODO</span>
-            <span class="project-tag">シンプル</span>
+            <span class="project-tag"><span class="material-symbols-outlined">build</span>ツール</span>
+            <span class="project-tag"><span class="material-symbols-outlined">task_alt</span>TODO</span>
+            <span class="project-tag"><span class="material-symbols-outlined">check_circle</span>シンプル</span>
           </div>
           <div class="download-links">
             <a href="https://itunes.apple.com/us/app/今日やるToDo/id1566078133?l=ja&ls=1&mt=8" target="_blank">
