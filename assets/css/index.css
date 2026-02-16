@@ -1,0 +1,281 @@
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--color-border);
+}
+
+.about-text h3 {
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.about-text p {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.skill-tag {
+    background: var(--color-bg-secondary);
+    color: var(--color-text);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid var(--color-border);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+.social-links a {
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+
+.social-links a:hover {
+    color: var(--color-primary);
+}
+
+.projects {
+    background: var(--color-bg-secondary);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: var(--color-bg);
+    border-radius: 16px;
+    padding: 1.75rem;
+    border: 1px solid var(--color-border);
+    text-align: left;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.project-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+}
+
+.project-card h3 {
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.project-card p {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    min-height: 5.8rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+.project-tag {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-light);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid var(--color-border);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.project-tag .material-symbols-outlined {
+    font-size: 0.95rem;
+}
+
+.download-links {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.download-links img {
+    height: 36px;
+}
+
+.izanami-logo {
+    height: 24px !important;
+}
+
+.availability-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--color-bg-secondary);
+    color: var(--color-text-light);
+    padding: 0.35rem 0.85rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid var(--color-border);
+    display: inline-block;
+    box-shadow: var(--shadow-sm);
+}
+
+.availability-badge.available {
+    background: #d4edda;
+    color: #155724;
+}
+
+.availability-badge.coming-soon {
+    background: #fff3cd;
+    color: #856404;
+}
+
+[data-theme="dark"] .project-icon {
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 6px 14px rgba(0, 0, 0, 0.42),
+        0 1px 4px rgba(0, 0, 0, 0.26);
+}
+
+[data-theme="dark"] .project-card {
+    border-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.24);
+}
+
+[data-theme="dark"] .project-card:hover {
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.38);
+}
+
+[data-theme="dark"] .project-tag {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+}
+
+[data-theme="dark"] .project-tag .material-symbols-outlined {
+    color: var(--color-text-lighter);
+}
+
+[data-theme="dark"] .profile-img {
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 6px 14px rgba(0, 0, 0, 0.38);
+}
+
+[data-theme="dark"] .skill-tag {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+}
+
+[data-theme="dark"] .social-links a {
+    color: var(--color-text-lighter);
+}
+
+[data-theme="dark"] .availability-badge {
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme="dark"] .availability-badge.available {
+    background: #22352a;
+    color: #b9e2c4;
+    box-shadow:
+        0 3px 8px rgba(27, 73, 41, 0.3),
+        0 1px 3px rgba(27, 73, 41, 0.2);
+}
+
+[data-theme="dark"] .availability-badge.coming-soon {
+    background: #3a3322;
+    color: #e4d5a4;
+    box-shadow:
+        0 3px 8px rgba(114, 90, 30, 0.28),
+        0 1px 3px rgba(114, 90, 30, 0.18);
+}
+
+[data-theme="dark"] footer {
+    background: #171717;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+[data-theme="dark"] footer p {
+    color: var(--color-text-lighter);
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        padding: 1.25rem;
+    }
+
+    .project-card h3 {
+        font-size: 1rem;
+    }
+
+    .project-card p {
+        font-size: 0.85rem;
+    }
+}
