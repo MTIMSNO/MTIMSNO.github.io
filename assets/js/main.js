@@ -55,4 +55,17 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    // Handle project card clicks
+    const projectCards = document.querySelectorAll('.project-card[data-link]');
+    projectCards.forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', function (e) {
+            // Ignore clicks on download links
+            if (e.target.closest('.download-links a')) {
+                return;
+            }
+            window.location.href = this.dataset.link;
+        });
+    });
 });
