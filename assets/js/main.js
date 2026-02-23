@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem(themeStorageKey, theme);
 
         if (themeToggleIcon) {
-            themeToggleIcon.textContent = theme === 'dark' ? 'dark_mode' : 'sunny';
+            themeToggleIcon.textContent = theme === 'dark' ? 'sunny' : 'nightlight';
         }
 
         if (themeToggleButton) {

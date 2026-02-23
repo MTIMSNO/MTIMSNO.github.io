@@ -256,12 +256,16 @@ section {
 .roadmap-item {
     border: 1px dashed rgba(150, 150, 150, 0.4);
     border-radius: 18px;
-    padding: 16px 24px;
+    padding: 16px 56px 16px 56px;
     background: rgba(245, 245, 245, 0.5);
     font-weight: 600;
     color: rgba(100, 100, 100, 0.8);
     position: relative;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 }
 
 [data-theme="dark"] .roadmap-item {
@@ -285,6 +289,18 @@ section {
     color: rgba(227, 184, 150, 0.6);
 }
 
+.roadmap-item .feature-name {
+    flex: 1;
+}
+
+.roadmap-item .version {
+    position: absolute;
+    right: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
 .roadmap-item.in-development {
     background: linear-gradient(120deg,
             rgba(185, 107, 42, 0.2),
@@ -304,6 +320,32 @@ section {
 .roadmap-item.in-development::before {
     color: var(--md-sys-color-secondary);
     animation: spin 2s linear infinite;
+}
+
+.roadmap-item.released {
+    background: linear-gradient(120deg,
+            rgba(132, 201, 139, 0.2),
+            rgba(132, 201, 139, 0.1));
+    border: 1px solid rgba(132, 201, 139, 0.5);
+    color: #2d7a35;
+}
+
+[data-theme="dark"] .roadmap-item.released {
+    background: linear-gradient(120deg,
+            rgba(132, 201, 139, 0.15),
+            rgba(132, 201, 139, 0.08));
+    border: 1px solid rgba(132, 201, 139, 0.5);
+    color: #84c98b;
+}
+
+.roadmap-item.released::before {
+    content: 'check';
+    color: #2d7a35;
+    animation: none;
+}
+
+[data-theme="dark"] .roadmap-item.released::before {
+    color: #84c98b;
 }
 
 .release {
@@ -502,7 +544,7 @@ footer a:hover {
     }
 
     .roadmap-item {
-        text-align: left;
+        justify-content: flex-start;
         padding-left: 56px;
     }
 
@@ -532,12 +574,18 @@ footer a:hover {
 
     .roadmap-item {
         padding-left: 52px;
+        padding-right: 52px;
         font-size: 14px;
     }
 
     .roadmap-item::before {
         left: 12px;
         font-size: 20px;
+    }
+
+    .roadmap-item .version {
+        right: 12px;
+        font-size: 10px;
     }
 
     .section-lead {
